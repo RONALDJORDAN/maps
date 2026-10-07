@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Rota não encontrada | Mapa Escolar</title>
+  <meta name="description" content="Página não encontrada no Mapa Escolar. Volte ao mapa estilo Google Maps." />
+  <link rel="stylesheet" href="/src/styles.css" />
+  <style>
+    body{overflow:auto}.err-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:90px 16px 40px}
+    .err-card{max-width:560px;width:100%;text-align:center;padding:40px 32px;border-radius:24px}
+    .err-code{font-size:88px;font-weight:800;letter-spacing:-4px;line-height:1;background:linear-gradient(135deg,#0071E3,#42a5f5);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .err-card h1{margin:8px 0;font-size:24px}.err-card p{color:var(--muted);font-size:15px}
+    .err-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+    .err-search{margin-top:18px;display:flex;gap:8px}
+    .err-search input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid #ddd;font-size:14px}
+  </style>
+</head>
+<body data-page="404">
+  <header class="gmaps-topbar glass"><div class="brand"><a href="/index.html" style="text-decoration:none">← Mapa Escolar</a></div>
+  <nav class="top-links"><a class="chip-link" href="/municipios.html">Municípios</a><a class="chip-link" href="/escolas.html">Escolas</a><a class="chip-link primary" href="/dashboard.html">Dashboard</a></nav></header>
+  <div class="err-wrap">
+    <div class="err-card glass apple-stagger-item">
+      <svg class="draw" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#0071E3" stroke-width="1.5"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/><path d="M4 4l16 16" stroke="#c22424"/></svg>
+      <div class="err-code">404</div>
+      <h1>Rota não encontrada</h1>
+      <p>O endereço <code id="bad-url"></code> não existe aqui.<br>Tente buscar um município, escola ou INEP abaixo.</p>
+      <div class="err-search"><input id="err-q" type="search" placeholder="Buscar… ex: Pão de Açúcar, 35503081" /><button class="btn" id="err-go">Buscar</button></div>
+      <div class="err-actions">
+        <a class="chip-link primary" href="/index.html">⤺ Voltar ao mapa</a>
+        <a class="chip-link" href="/municipios.html">Municípios</a>
+        <a class="chip-link" href="/escolas.html">Escolas</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js"></script>
+  <script type="module" src="/src/error.jsx"></script>
+</body>
+</html>

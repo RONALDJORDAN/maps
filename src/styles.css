@@ -1,0 +1,68 @@
+:root{
+  --bg:#F5F5F7; --card:#ffffff; --ink:#1d1d1f; --muted:#6e6e73;
+  --accent:#0071E3; --green:#1d8127; --amber:#b26a00;
+  --red:#c22424;
+  --transition-premium:.7s; --transition-slow:.5s;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --glass:rgba(255,255,255,.72);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);overflow:hidden}
+body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard"],body[data-page="404"],body[data-page="402"]{overflow:auto}
+.glass{background:var(--glass);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(0,0,0,.06)}
+/* Topbar Google Maps */
+.gmaps-topbar{position:fixed;top:12px;left:12px;right:12px;z-index:1000;display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.brand{display:flex;align-items:center;gap:8px;font-size:18px;white-space:nowrap}
+.search-wrap{flex:1;display:flex;align-items:center;gap:8px;background:#fff;border-radius:24px;padding:8px 12px;box-shadow:0 1px 4px rgba(0,0,0,.15) inset,0 1px 2px rgba(0,0,0,.08)}
+.search-wrap input{flex:1;border:0;outline:0;font-size:15px;background:transparent}
+.icon-btn{border:0;background:#fff;border-radius:50%;width:36px;height:36px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2);transition:transform var(--transition-slow) var(--ease)}
+.icon-btn:hover{transform:scale(1.06)}
+.top-links{display:flex;gap:8px}
+.chip-link{text-decoration:none;font-size:13px;padding:8px 12px;border-radius:20px;background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.15);transition:transform var(--transition-slow) var(--ease),opacity var(--transition-slow) var(--ease)}
+.chip-link.primary{background:var(--accent);color:#fff}
+.chip-link:hover,.filter-chip:hover{transform:translateY(-1px)}
+.gmaps-layout{position:fixed;inset:0;padding-top:76px;display:flex}
+#sidebar{width:360px;max-width:88vw;margin:0 0 12px 12px;border-radius:16px;display:flex;flex-direction:column;overflow:hidden;z-index:900;box-shadow:0 8px 30px rgba(0,0,0,.12);transition:transform var(--transition-premium) var(--ease),opacity var(--transition-premium) var(--ease)}
+#sidebar.hidden{transform:translateX(-110%);opacity:0;pointer-events:none;position:absolute}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px}
+.kpi{background:#fff;border-radius:12px;padding:10px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.kpi b{display:block;font-size:20px}
+.kpi span{font-size:11px;color:var(--muted)}
+.sidebar-filters{padding:0 12px 8px}
+.filter-row{display:flex;gap:8px}
+.filter-chip{border:1px solid rgba(0,0,0,.1);background:#fff;border-radius:20px;padding:6px 12px;font-size:13px;cursor:pointer}
+.filter-chip.active{background:var(--ink);color:#fff}
+.results{flex:1;overflow:auto;padding:8px 12px 12px;display:flex;flex-direction:column;gap:8px}
+.card{background:#fff;border-radius:12px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,.08);cursor:pointer;opacity:0;transform:translateY(20px);transition:transform var(--transition-slow) var(--ease),box-shadow var(--transition-slow) var(--ease)}
+.card.in{opacity:1;transform:none}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.card h4{margin:0 0 4px;font-size:14px}
+.card p{margin:0;font-size:12px;color:var(--muted)}
+.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:12px;margin-top:6px}
+.badge.mun{background:#e8f0fe;color:#1a73e8}.badge.esc{background:#e6f4ea;color:var(--green)}
+.map-area{flex:1;position:relative;margin:0 12px 12px 12px;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+#map{position:absolute;inset:0;background:#aad3df}
+/* divIcon por estagio (2.14) */
+.pin{width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.pin span{transform:rotate(45deg)}
+.pin.ativo{background:var(--accent)} .pin.manut{background:var(--amber)} .pin.escola{background:var(--green)}
+.map-controls{position:absolute;right:12px;bottom:24px;display:flex;flex-direction:column;gap:8px;z-index:800}
+.fab{border:0;background:#fff;border-radius:24px;padding:10px 14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3);font-size:14px}
+.zoom-stack{display:flex;flex-direction:column;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.zoom-stack button{border:0;background:#fff;font-size:20px;width:44px;height:44px;cursor:pointer}
+.zoom-stack button+button{border-top:1px solid #eee}
+.prov-stack button{font-size:13px;font-weight:700;height:36px}
+.prov-stack button.active{background:var(--ink);color:#fff}
+.free-tag{font-size:11px;text-align:center;opacity:.9}
+.toast{position:absolute;left:50%;bottom:18px;transform:translateX(-50%) translateY(20px);background:#323232;color:#fff;padding:10px 16px;border-radius:24px;font-size:13px;opacity:0;transition:opacity .4s var(--ease),transform .4s var(--ease);z-index:900;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* paginas internas */
+.page{max-width:1100px;margin:90px auto 40px;padding:0 16px}
+.table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+.table th,.table td{padding:10px;border-bottom:1px solid #eee;font-size:14px;text-align:left}
+.form{display:grid;gap:10px;background:#fff;padding:16px;border-radius:12px;margin-top:12px}
+.form input,.form select{padding:10px;border:1px solid #ddd;border-radius:8px;font-size:14px}
+.btn{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 16px;cursor:pointer}
+@media (max-width:760px){ .top-links{display:none} #sidebar{width:300px} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} .card{opacity:1;transform:none} }

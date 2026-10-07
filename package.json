@@ -1,0 +1,22 @@
+{
+  "name": "maps-escolar-municipios",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Mapa Escolar Municipios — estilo Google Maps + CRM escolas (Skills 2.14 + 2.6, Regra Mestra 1.21)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7"
+  }
+}

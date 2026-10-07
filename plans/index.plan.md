@@ -1,0 +1,21 @@
+# Plano — index.html (Mapa Escolar Municípios — Principal)
+
+- Rota/arquivo: `index.html` (root `C:\Projetos\maps\index.html`, MPA input `main`)
+- data-page: `"mapa-escolar"`
+- Componentes (React islands): `MapView` (#react-map), `KpiStrip` (#react-kpis), `SearchFilter` (#react-search)
+- Seções e ordem: `header-apple-crystal-glass → hero-split (título + busca município/INEP) → mapa Leaflet full-width + KPIs overlay → grid-módulos (Municípios / Escolas / Dashboard) → footer-bento-conectado`
+- Tokens 60-30-10 + glass/Apple dessa página:
+  - 60% fundo claro `#F5F5F7`, 30% cards brancos glass `backdrop-filter: blur(20px)`, 10% acento azul `#0071E3` + verde estágio / vermelho manutenção
+  - Skills 1.x: `1.6-design-system-60-30-10`, `1.14-header-apple-crystal-glass`, `1.15-hero-split-layout`, `1.8-footer-bento-conectado`
+- Animações 60Hz dessa página (1.16 + 5.9 + 1.21 Obrigatória):
+  - anime.js SEMPRE: stagger `.apple-stagger-item` translateY[20,0] opacity[0,1] delay stagger(70) duration 700 easing cubicBezier(.22,1,.36,1); hover `.apple-hover` scale 1.04 spring
+  - Vivus SEMPRE que houver SVG: logo/divisores `svg.draw` type delayed duration 120 start inViewport
+  - rAF + passive:true: parallax hero `scrollY*0.4` + overlay legibilidade; game-loop Leaflet: `dt=min((t-last)/1000,0.05)` para flyTo/fitBounds e cluster expand, só `transform/opacity`
+  - `prefers-reduced-motion: reduce` desliga tudo
+- Mapa (Skill 2.14):
+  - Tiles CartoDB Voyager, `L.markerClusterGroup`, `divIcon` por estágio (contrato/turno/volumetria), `L.polyline` cidade→escola, `map.fitBounds(bounds)`
+  - Dados mock locais `src/data/municipios.json + escolas.json` (INEP 8 dígitos) via 2.9 `onValue` pronto p/ Firebase RTDB; sanitizar trim + anti-XSS + teste "Pão de Açúcar"
+- Assets: Leaflet CSS/JS CDN + markercluster CDN; `public/` com pin SVGs leves; imgs `loading="lazy"`; sem mp4 nesta página
+- SEO/OG/JSON-LD específicos da página: title "Mapa Escolar — Municípios e Escolas", meta description, OG, JSON-LD `Dataset` (municípios/escolas) + `BreadcrumbList`
+- Critério de pronto: LCP <2.5s, CLS <0.1, FPS ≥55 scroll/zoom/cluster sem jank, Lighthouse Best Practices OK, caso feliz + borda (vazio/acentuado/offline) OK
+- Skills citadas: `1.6, 1.14, 1.15, 1.8, 1.16, 1.21, 1.13-gsap-opcional` + `2.14, 2.6, 2.7, 2.9`

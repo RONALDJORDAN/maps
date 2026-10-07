@@ -1,0 +1,9 @@
+[
+  { "inep": "35503081", "nome": "EMEF Vila Mariana", "ibge": "3550308", "lat": -23.5882, "lng": -46.6324, "turno": "manhã", "alunos": 420 },
+  { "inep": "35503082", "nome": "EE Caetano de Campos", "ibge": "3550308", "lat": -23.5431, "lng": -46.6292, "turno": "tarde", "alunos": 380 },
+  { "inep": "35095021", "nome": "EMEF Corrêa de Mello", "ibge": "3509502", "lat": -22.9071, "lng": -47.0608, "turno": "manhã", "alunos": 250 },
+  { "inep": "35095022", "nome": "EE Culto à Ciência", "ibge": "3509502", "lat": -22.9, "lng": -47.068, "turno": "noite", "alunos": 190 },
+  { "inep": "35522051", "nome": "EM Achilles de Almeida", "ibge": "3552205", "lat": -23.4969, "lng": -47.455, "turno": "tarde", "alunos": 210 },
+  { "inep": "35188001", "nome": "EE Conselheiro Crispiniano", "ibge": "3518800", "lat": -23.453, "lng": -46.529, "turno": "manhã", "alunos": 300 },
+  { "inep": "35306071", "nome": "EM Pão de Açúcar Centro", "ibge": "3530607", "lat": -23.121, "lng": -46.551, "turno": "manhã", "alunos": 45 }
+]

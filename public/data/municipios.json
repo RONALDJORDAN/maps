@@ -1,0 +1,7 @@
+[
+  { "ibge": "3550308", "nome": "São Paulo", "uf": "SP", "lat": -23.5558, "lng": -46.6396, "contrato": "ativo", "turnos": ["manhã", "tarde", "noite"], "volumetria": 1250 },
+  { "ibge": "3509502", "nome": "Campinas", "uf": "SP", "lat": -22.9099, "lng": -47.0626, "contrato": "ativo", "turnos": ["manhã", "tarde"], "volumetria": 480 },
+  { "ibge": "3552205", "nome": "Sorocaba", "uf": "SP", "lat": -23.5015, "lng": -47.4526, "contrato": "manutencao", "turnos": ["manhã", "tarde"], "volumetria": 320 },
+  { "ibge": "3518800", "nome": "Guarulhos", "uf": "SP", "lat": -23.4543, "lng": -46.5337, "contrato": "ativo", "turnos": ["manhã", "noite"], "volumetria": 610 },
+  { "ibge": "3530607", "nome": "Pão de Açúcar", "uf": "SP", "lat": -23.12, "lng": -46.55, "contrato": "ativo", "turnos": ["manhã"], "volumetria": 45 }
+]

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa Escolar — Municípios e Escolas</title>
+  <meta name="description" content="Mapa escolar estilo Google Maps: municípios, rede escolar, INEP, turnos e volumetria. Busca, cluster, rota cidade-escola." />
+  <meta property="og:title" content="Mapa Escolar — Municípios e Escolas" />
+  <meta property="og:description" content="Navegue como no Google Maps: busque município ou escola por nome/INEP e veja a rede escolar." />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"Mapa Escolar Municipios","description":"Municipios e escolas com INEP, turnos e volumetria","keywords":["mapa escolar","municipios","INEP","Leaflet"] }
+  </script>
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body data-page="mapa-escolar">
+  <!-- Top search bar estilo Google Maps -->
+  <header class="gmaps-topbar glass" id="topbar">
+    <div class="brand">
+      <svg class="draw" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0071E3" stroke-width="2"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <span>Mapa <strong>Escolar</strong></span>
+    </div>
+    <div class="search-wrap">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="gmaps-search" type="search" placeholder="Buscar município, escola ou INEP (ex: Pão de Açúcar)…" autocomplete="off" aria-label="Buscar" />
+      <button id="search-clear" class="icon-btn" aria-label="Limpar">✕</button>
+    </div>
+    <nav class="top-links">
+      <a href="/municipios.html" class="chip-link">Municípios</a>
+      <a href="/escolas.html" class="chip-link">Escolas</a>
+      <a href="/dashboard.html" class="chip-link primary">Dashboard</a>
+    </nav>
+    <button id="sidebar-toggle" class="icon-btn" aria-label="Painel">☰</button>
+  </header>
+
+  <div class="gmaps-layout">
+    <!-- Sidebar resultados -->
+    <aside id="sidebar" class="glass">
+      <div id="react-kpis"></div>
+      <div class="sidebar-filters">
+        <div id="react-search"></div>
+        <div class="filter-row">
+          <button class="filter-chip active" data-f="all">Tudo</button>
+          <button class="filter-chip" data-f="municipio">Municípios</button>
+          <button class="filter-chip" data-f="escola">Escolas</button>
+        </div>
+      </div>
+      <div id="react-map-list" class="results"></div>
+      <div id="react-map" style="display:none"></div>
+    </aside>
+
+    <!-- Mapa full -->
+    <main class="map-area">
+      <div id="map" role="application" aria-label="Mapa escolar"></div>
+      <div class="map-controls">
+        <button id="btn-myloc" class="fab" title="Minha localização" aria-label="Minha localização">◎</button>
+        <div class="zoom-stack">
+          <button id="btn-zin" aria-label="Aproximar">+</button>
+          <button id="btn-zout" aria-label="Afastar">−</button>
+        </div>
+        <button id="btn-fit" class="fab wide">⤢ Ver tudo</button>
+        <div class="zoom-stack prov-stack" title="Provedor de mapa 100% grátis, sem chave">
+          <button data-prov="osm" class="active" title="OSM padrão grátis">O</button>
+          <button data-prov="esri" title="Esri ruas grátis">E</button>
+          <button data-prov="hot" title="Humanitário grátis">H</button>
+        </div>
+        <div class="fab wide free-tag">🆓 mapas grátis · sem chave</div>
+      </div>
+      <div id="toast" class="toast" role="status"></div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js"></script>
+  <script>
+    // Vivus SEMPRE que houver SVG (Skill 1.21)
+    document.querySelectorAll('svg.draw').forEach((svg) => {
+      try { new Vivus(svg, { type: 'delayed', duration: 120, start: 'autostart' }); } catch(e) {}
+    });
+    // reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('reduced');
+    }
+  </script>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+# Deps
+node_modules/
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# Build Vite (1.21 MPA)
+dist/
+dist-ssr/
+*.local
+
+# Env (4.6 / 4.8 — nunca commitar segredo)
+.env
+.env.*
+!.env.example
+!.env.template
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+firebase-debug.log
+firebase-debug.*.log
+
+# Hosting / deploy
+.firebase/
+.firebaserc
+
+# OS Windows/macOS/Linux
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.user
+*.swp
+*.swo
+
+# Vite / TS cache
+node_modules/.vite/
+node_modules/.cache/
+*.tsbuildinfo
+vite.config.*.timestamp-*
+
+# Testes / coverage
+coverage/
+.nyc_output/
+
+# Temporários
+*.tmp
+*.temp
+.opencode/tool-output/
