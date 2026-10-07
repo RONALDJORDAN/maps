@@ -2,15 +2,20 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Escolas — Rede Escolar</title>
+  <title>Escolas por Município | Mapa Escolar</title>
+  <meta name="description" content="Listagem de escolas por município em cards transparentes, com cadastro e localização." />
   <link rel="stylesheet" href="/src/styles.css" />
 </head>
 <body data-page="escolas">
-  <header class="gmaps-topbar glass"><div class="brand"><a href="/index.html" style="text-decoration:none">← Mapa Escolar</a></div>
-  <div class="search-wrap"><input id="esc-q" type="search" placeholder="Buscar escola ou INEP 8 dígitos…" /></div>
-  <nav class="top-links"><a class="chip-link" href="/municipios.html">Municípios</a><a class="chip-link primary" href="/dashboard.html">Dashboard</a></nav></header>
-  <div class="page"><h1>Escolas</h1><div id="esc-app"></div></div>
+  <div id="esc-bgmap" aria-hidden="true"></div>
+  <div class="bgshade" aria-hidden="true"></div>
+  <div id="esc-app"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('reduced');
+    }
+  </script>
   <script type="module" src="/src/escolas.jsx"></script>
 </body>
 </html>

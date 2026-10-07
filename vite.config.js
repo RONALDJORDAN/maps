@@ -15,7 +15,6 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         municipios: resolve(__dirname, 'municipios.html'),
         escolas: resolve(__dirname, 'escolas.html'),
-        dashboard: resolve(__dirname, 'dashboard.html'),
         e404: resolve(__dirname, '404.html'),
         e402: resolve(__dirname, '402.html')
       }

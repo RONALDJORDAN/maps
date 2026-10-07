@@ -1,7 +1,1337 @@
 [
-  { "ibge": "3550308", "nome": "São Paulo", "uf": "SP", "lat": -23.5558, "lng": -46.6396, "contrato": "ativo", "turnos": ["manhã", "tarde", "noite"], "volumetria": 1250 },
-  { "ibge": "3509502", "nome": "Campinas", "uf": "SP", "lat": -22.9099, "lng": -47.0626, "contrato": "ativo", "turnos": ["manhã", "tarde"], "volumetria": 480 },
-  { "ibge": "3552205", "nome": "Sorocaba", "uf": "SP", "lat": -23.5015, "lng": -47.4526, "contrato": "manutencao", "turnos": ["manhã", "tarde"], "volumetria": 320 },
-  { "ibge": "3518800", "nome": "Guarulhos", "uf": "SP", "lat": -23.4543, "lng": -46.5337, "contrato": "ativo", "turnos": ["manhã", "noite"], "volumetria": 610 },
-  { "ibge": "3530607", "nome": "Pão de Açúcar", "uf": "SP", "lat": -23.12, "lng": -46.55, "contrato": "ativo", "turnos": ["manhã"], "volumetria": 45 }
+ {
+  "ibge": "2700102",
+  "nome": "Água Branca",
+  "uf": "AL",
+  "lat": -9.2614,
+  "lng": -37.9361,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 20
+ },
+ {
+  "ibge": "2700201",
+  "nome": "Anadia",
+  "uf": "AL",
+  "lat": -9.683,
+  "lng": -36.3053,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 33
+ },
+ {
+  "ibge": "2700300",
+  "nome": "Arapiraca",
+  "uf": "AL",
+  "lat": -9.7549,
+  "lng": -36.6615,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde",
+   "noite"
+  ],
+  "volumetria": 274
+ },
+ {
+  "ibge": "2700409",
+  "nome": "Atalaia",
+  "uf": "AL",
+  "lat": -9.503,
+  "lng": -36.0219,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 59
+ },
+ {
+  "ibge": "2700508",
+  "nome": "Barra de Santo Antônio",
+  "uf": "AL",
+  "lat": -9.4038,
+  "lng": -35.5118,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 72
+ },
+ {
+  "ibge": "2700607",
+  "nome": "Barra de São Miguel",
+  "uf": "AL",
+  "lat": -9.8261,
+  "lng": -35.8838,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 85
+ },
+ {
+  "ibge": "2700706",
+  "nome": "Batalha",
+  "uf": "AL",
+  "lat": -9.6734,
+  "lng": -37.1265,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 98
+ },
+ {
+  "ibge": "2700805",
+  "nome": "Belém",
+  "uf": "AL",
+  "lat": -9.5715,
+  "lng": -36.4928,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 111
+ },
+ {
+  "ibge": "2700904",
+  "nome": "Belo Monte",
+  "uf": "AL",
+  "lat": -9.8283,
+  "lng": -37.2798,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 124
+ },
+ {
+  "ibge": "2701001",
+  "nome": "Boca da Mata",
+  "uf": "AL",
+  "lat": -9.6452,
+  "lng": -36.2117,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 137
+ },
+ {
+  "ibge": "2701100",
+  "nome": "Branquinha",
+  "uf": "AL",
+  "lat": -9.2478,
+  "lng": -36.0152,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 150
+ },
+ {
+  "ibge": "2701209",
+  "nome": "Cacimbinhas",
+  "uf": "AL",
+  "lat": -9.4012,
+  "lng": -36.9911,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 163
+ },
+ {
+  "ibge": "2701308",
+  "nome": "Cajueiro",
+  "uf": "AL",
+  "lat": -9.3996,
+  "lng": -36.1524,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 176
+ },
+ {
+  "ibge": "2701357",
+  "nome": "Campestre",
+  "uf": "AL",
+  "lat": -8.8482,
+  "lng": -35.566,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 189
+ },
+ {
+  "ibge": "2701407",
+  "nome": "Campo Alegre",
+  "uf": "AL",
+  "lat": -9.7799,
+  "lng": -36.3576,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 22
+ },
+ {
+  "ibge": "2701506",
+  "nome": "Campo Grande",
+  "uf": "AL",
+  "lat": -9.9641,
+  "lng": -36.7435,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 35
+ },
+ {
+  "ibge": "2701605",
+  "nome": "Canapi",
+  "uf": "AL",
+  "lat": -9.1174,
+  "lng": -37.6012,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 48
+ },
+ {
+  "ibge": "2701704",
+  "nome": "Capela",
+  "uf": "AL",
+  "lat": -9.415,
+  "lng": -36.0826,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 61
+ },
+ {
+  "ibge": "2701803",
+  "nome": "Carneiros",
+  "uf": "AL",
+  "lat": -9.4833,
+  "lng": -37.3757,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 74
+ },
+ {
+  "ibge": "2701902",
+  "nome": "Chã Preta",
+  "uf": "AL",
+  "lat": -9.2556,
+  "lng": -36.2983,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 87
+ },
+ {
+  "ibge": "2702009",
+  "nome": "Coité do Nóia",
+  "uf": "AL",
+  "lat": -9.6335,
+  "lng": -36.5845,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 100
+ },
+ {
+  "ibge": "2702108",
+  "nome": "Colônia Leopoldina",
+  "uf": "AL",
+  "lat": -8.9145,
+  "lng": -35.722,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 113
+ },
+ {
+  "ibge": "2702207",
+  "nome": "Coqueiro Seco",
+  "uf": "AL",
+  "lat": -9.6371,
+  "lng": -35.7994,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 126
+ },
+ {
+  "ibge": "2702306",
+  "nome": "Coruripe",
+  "uf": "AL",
+  "lat": -10.1267,
+  "lng": -36.1754,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 139
+ },
+ {
+  "ibge": "2702355",
+  "nome": "Craíbas",
+  "uf": "AL",
+  "lat": -9.6168,
+  "lng": -36.7685,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 152
+ },
+ {
+  "ibge": "2702405",
+  "nome": "Delmiro Gouveia",
+  "uf": "AL",
+  "lat": -9.3841,
+  "lng": -37.9978,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde",
+   "noite"
+  ],
+  "volumetria": 225
+ },
+ {
+  "ibge": "2702504",
+  "nome": "Dois Riachos",
+  "uf": "AL",
+  "lat": -9.3846,
+  "lng": -37.0965,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 178
+ },
+ {
+  "ibge": "2702553",
+  "nome": "Estrela de Alagoas",
+  "uf": "AL",
+  "lat": -9.3889,
+  "lng": -36.7617,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 191
+ },
+ {
+  "ibge": "2702603",
+  "nome": "Feira Grande",
+  "uf": "AL",
+  "lat": -9.8956,
+  "lng": -36.6787,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 24
+ },
+ {
+  "ibge": "2702702",
+  "nome": "Feliz Deserto",
+  "uf": "AL",
+  "lat": -10.2925,
+  "lng": -36.3029,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 37
+ },
+ {
+  "ibge": "2702801",
+  "nome": "Flexeiras",
+  "uf": "AL",
+  "lat": -9.2789,
+  "lng": -35.7235,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 50
+ },
+ {
+  "ibge": "2702900",
+  "nome": "Girau do Ponciano",
+  "uf": "AL",
+  "lat": -9.884,
+  "lng": -36.8316,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 63
+ },
+ {
+  "ibge": "2703007",
+  "nome": "Ibateguara",
+  "uf": "AL",
+  "lat": -8.9737,
+  "lng": -35.928,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 76
+ },
+ {
+  "ibge": "2703106",
+  "nome": "Igaci",
+  "uf": "AL",
+  "lat": -9.5379,
+  "lng": -36.6318,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 89
+ },
+ {
+  "ibge": "2703205",
+  "nome": "Igreja Nova",
+  "uf": "AL",
+  "lat": -10.1267,
+  "lng": -36.6582,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 102
+ },
+ {
+  "ibge": "2703304",
+  "nome": "Inhapi",
+  "uf": "AL",
+  "lat": -9.2221,
+  "lng": -37.7481,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 115
+ },
+ {
+  "ibge": "2703403",
+  "nome": "Jacaré dos Homens",
+  "uf": "AL",
+  "lat": -9.6349,
+  "lng": -37.2056,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 128
+ },
+ {
+  "ibge": "2703502",
+  "nome": "Jacuípe",
+  "uf": "AL",
+  "lat": -8.8395,
+  "lng": -35.4591,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 141
+ },
+ {
+  "ibge": "2703601",
+  "nome": "Japaratinga",
+  "uf": "AL",
+  "lat": -9.0875,
+  "lng": -35.2634,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 154
+ },
+ {
+  "ibge": "2703700",
+  "nome": "Jaramataia",
+  "uf": "AL",
+  "lat": -9.6597,
+  "lng": -37.0015,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 167
+ },
+ {
+  "ibge": "2703759",
+  "nome": "Jequiá da Praia",
+  "uf": "AL",
+  "lat": -10.0093,
+  "lng": -36.0233,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 180
+ },
+ {
+  "ibge": "2703809",
+  "nome": "Joaquim Gomes",
+  "uf": "AL",
+  "lat": -9.1373,
+  "lng": -35.7519,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 193
+ },
+ {
+  "ibge": "2703908",
+  "nome": "Jundiá",
+  "uf": "AL",
+  "lat": -8.944,
+  "lng": -35.5547,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 26
+ },
+ {
+  "ibge": "2704005",
+  "nome": "Junqueiro",
+  "uf": "AL",
+  "lat": -9.9202,
+  "lng": -36.4747,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 39
+ },
+ {
+  "ibge": "2704104",
+  "nome": "Lagoa da Canoa",
+  "uf": "AL",
+  "lat": -9.8294,
+  "lng": -36.7396,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 52
+ },
+ {
+  "ibge": "2704203",
+  "nome": "Limoeiro de Anadia",
+  "uf": "AL",
+  "lat": -9.7454,
+  "lng": -36.4595,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 65
+ },
+ {
+  "ibge": "2704302",
+  "nome": "Maceió",
+  "uf": "AL",
+  "lat": -9.6477,
+  "lng": -35.7339,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde",
+   "noite"
+  ],
+  "volumetria": 1002
+ },
+ {
+  "ibge": "2704401",
+  "nome": "Major Isidoro",
+  "uf": "AL",
+  "lat": -9.5327,
+  "lng": -36.9862,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 91
+ },
+ {
+  "ibge": "2704906",
+  "nome": "Mar Vermelho",
+  "uf": "AL",
+  "lat": -9.4474,
+  "lng": -36.3881,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 156
+ },
+ {
+  "ibge": "2704500",
+  "nome": "Maragogi",
+  "uf": "AL",
+  "lat": -9.0118,
+  "lng": -35.2225,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 104
+ },
+ {
+  "ibge": "2704609",
+  "nome": "Maravilha",
+  "uf": "AL",
+  "lat": -9.2304,
+  "lng": -37.3524,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 117
+ },
+ {
+  "ibge": "2704708",
+  "nome": "Marechal Deodoro",
+  "uf": "AL",
+  "lat": -9.7097,
+  "lng": -35.8967,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde",
+   "noite"
+  ],
+  "volumetria": 250
+ },
+ {
+  "ibge": "2704807",
+  "nome": "Maribondo",
+  "uf": "AL",
+  "lat": -9.5798,
+  "lng": -36.3065,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 143
+ },
+ {
+  "ibge": "2705002",
+  "nome": "Mata Grande",
+  "uf": "AL",
+  "lat": -9.1182,
+  "lng": -37.7323,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 169
+ },
+ {
+  "ibge": "2705101",
+  "nome": "Matriz de Camaragibe",
+  "uf": "AL",
+  "lat": -9.1544,
+  "lng": -35.5243,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 182
+ },
+ {
+  "ibge": "2705200",
+  "nome": "Messias",
+  "uf": "AL",
+  "lat": -9.3938,
+  "lng": -35.8392,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 195
+ },
+ {
+  "ibge": "2705309",
+  "nome": "Minador do Negrão",
+  "uf": "AL",
+  "lat": -9.3124,
+  "lng": -36.8696,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 28
+ },
+ {
+  "ibge": "2705408",
+  "nome": "Monteirópolis",
+  "uf": "AL",
+  "lat": -9.6026,
+  "lng": -37.2462,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 41
+ },
+ {
+  "ibge": "2705507",
+  "nome": "Murici",
+  "uf": "AL",
+  "lat": -9.3068,
+  "lng": -35.9428,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 54
+ },
+ {
+  "ibge": "2705606",
+  "nome": "Novo Lino",
+  "uf": "AL",
+  "lat": -8.9419,
+  "lng": -35.664,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 67
+ },
+ {
+  "ibge": "2705705",
+  "nome": "Olho d'Água das Flores",
+  "uf": "AL",
+  "lat": -9.5318,
+  "lng": -37.2939,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 80
+ },
+ {
+  "ibge": "2705804",
+  "nome": "Olho d'Água do Casado",
+  "uf": "AL",
+  "lat": -9.5021,
+  "lng": -37.8325,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 93
+ },
+ {
+  "ibge": "2705903",
+  "nome": "Olho d'Água Grande",
+  "uf": "AL",
+  "lat": -10.0561,
+  "lng": -36.8135,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 106
+ },
+ {
+  "ibge": "2706000",
+  "nome": "Olivença",
+  "uf": "AL",
+  "lat": -9.5191,
+  "lng": -37.1893,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 119
+ },
+ {
+  "ibge": "2706109",
+  "nome": "Ouro Branco",
+  "uf": "AL",
+  "lat": -9.1623,
+  "lng": -37.3583,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 132
+ },
+ {
+  "ibge": "2706208",
+  "nome": "Palestina",
+  "uf": "AL",
+  "lat": -9.6721,
+  "lng": -37.3293,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 145
+ },
+ {
+  "ibge": "2706307",
+  "nome": "Palmeira dos Índios",
+  "uf": "AL",
+  "lat": -9.4076,
+  "lng": -36.6324,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde",
+   "noite"
+  ],
+  "volumetria": 842
+ },
+ {
+  "ibge": "2706406",
+  "nome": "Pão de Açúcar",
+  "uf": "AL",
+  "lat": -9.7497,
+  "lng": -37.433,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 171
+ },
+ {
+  "ibge": "2706422",
+  "nome": "Pariconha",
+  "uf": "AL",
+  "lat": -9.254,
+  "lng": -38.0039,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 184
+ },
+ {
+  "ibge": "2706448",
+  "nome": "Paripueira",
+  "uf": "AL",
+  "lat": -9.4631,
+  "lng": -35.552,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 197
+ },
+ {
+  "ibge": "2706505",
+  "nome": "Passo de Camaragibe",
+  "uf": "AL",
+  "lat": -9.2368,
+  "lng": -35.4901,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 30
+ },
+ {
+  "ibge": "2706604",
+  "nome": "Paulo Jacinto",
+  "uf": "AL",
+  "lat": -9.3679,
+  "lng": -36.3672,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 43
+ },
+ {
+  "ibge": "2706703",
+  "nome": "Penedo",
+  "uf": "AL",
+  "lat": -10.2872,
+  "lng": -36.5819,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde",
+   "noite"
+  ],
+  "volumetria": 1064
+ },
+ {
+  "ibge": "2706802",
+  "nome": "Piaçabuçu",
+  "uf": "AL",
+  "lat": -10.4067,
+  "lng": -36.4337,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 69
+ },
+ {
+  "ibge": "2706901",
+  "nome": "Pilar",
+  "uf": "AL",
+  "lat": -9.6017,
+  "lng": -35.9511,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 82
+ },
+ {
+  "ibge": "2707008",
+  "nome": "Pindoba",
+  "uf": "AL",
+  "lat": -9.4738,
+  "lng": -36.2918,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 95
+ },
+ {
+  "ibge": "2707107",
+  "nome": "Piranhas",
+  "uf": "AL",
+  "lat": -9.6116,
+  "lng": -37.7616,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 108
+ },
+ {
+  "ibge": "2707206",
+  "nome": "Poço das Trincheiras",
+  "uf": "AL",
+  "lat": -9.3063,
+  "lng": -37.2855,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 121
+ },
+ {
+  "ibge": "2707305",
+  "nome": "Porto Calvo",
+  "uf": "AL",
+  "lat": -9.0519,
+  "lng": -35.3987,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 134
+ },
+ {
+  "ibge": "2707404",
+  "nome": "Porto de Pedras",
+  "uf": "AL",
+  "lat": -9.161,
+  "lng": -35.297,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 147
+ },
+ {
+  "ibge": "2707503",
+  "nome": "Porto Real do Colégio",
+  "uf": "AL",
+  "lat": -10.1868,
+  "lng": -36.8357,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 160
+ },
+ {
+  "ibge": "2707602",
+  "nome": "Quebrangulo",
+  "uf": "AL",
+  "lat": -9.3218,
+  "lng": -36.4736,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 173
+ },
+ {
+  "ibge": "2707701",
+  "nome": "Rio Largo",
+  "uf": "AL",
+  "lat": -9.4778,
+  "lng": -35.8394,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde",
+   "noite"
+  ],
+  "volumetria": 534
+ },
+ {
+  "ibge": "2707800",
+  "nome": "Roteiro",
+  "uf": "AL",
+  "lat": -9.8335,
+  "lng": -35.9777,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 199
+ },
+ {
+  "ibge": "2707909",
+  "nome": "Santa Luzia do Norte",
+  "uf": "AL",
+  "lat": -9.6037,
+  "lng": -35.8232,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 32
+ },
+ {
+  "ibge": "2708006",
+  "nome": "Santana do Ipanema",
+  "uf": "AL",
+  "lat": -9.37,
+  "lng": -37.248,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde",
+   "noite"
+  ],
+  "volumetria": 645
+ },
+ {
+  "ibge": "2708105",
+  "nome": "Santana do Mundaú",
+  "uf": "AL",
+  "lat": -9.17,
+  "lng": -36.2206,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 58
+ },
+ {
+  "ibge": "2708204",
+  "nome": "São Brás",
+  "uf": "AL",
+  "lat": -10.1258,
+  "lng": -36.8982,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 71
+ },
+ {
+  "ibge": "2708303",
+  "nome": "São José da Laje",
+  "uf": "AL",
+  "lat": -9.0093,
+  "lng": -36.0567,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 84
+ },
+ {
+  "ibge": "2708402",
+  "nome": "São José da Tapera",
+  "uf": "AL",
+  "lat": -9.5584,
+  "lng": -37.3819,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 97
+ },
+ {
+  "ibge": "2708501",
+  "nome": "São Luís do Quitunde",
+  "uf": "AL",
+  "lat": -9.3182,
+  "lng": -35.5605,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 110
+ },
+ {
+  "ibge": "2708600",
+  "nome": "São Miguel dos Campos",
+  "uf": "AL",
+  "lat": -9.7831,
+  "lng": -36.0968,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde",
+   "noite"
+  ],
+  "volumetria": 867
+ },
+ {
+  "ibge": "2708709",
+  "nome": "São Miguel dos Milagres",
+  "uf": "AL",
+  "lat": -9.2672,
+  "lng": -35.3763,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 136
+ },
+ {
+  "ibge": "2708808",
+  "nome": "São Sebastião",
+  "uf": "AL",
+  "lat": -9.9315,
+  "lng": -36.5439,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 149
+ },
+ {
+  "ibge": "2708907",
+  "nome": "Satuba",
+  "uf": "AL",
+  "lat": -9.5691,
+  "lng": -35.8227,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 162
+ },
+ {
+  "ibge": "2708956",
+  "nome": "Senador Rui Palmeira",
+  "uf": "AL",
+  "lat": -9.4699,
+  "lng": -37.4576,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 175
+ },
+ {
+  "ibge": "2709004",
+  "nome": "Tanque d'Arca",
+  "uf": "AL",
+  "lat": -9.5348,
+  "lng": -36.4315,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 188
+ },
+ {
+  "ibge": "2709103",
+  "nome": "Taquarana",
+  "uf": "AL",
+  "lat": -9.6126,
+  "lng": -36.5102,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 21
+ },
+ {
+  "ibge": "2709152",
+  "nome": "Teotônio Vilela",
+  "uf": "AL",
+  "lat": -9.9063,
+  "lng": -36.3571,
+  "contrato": "manutencao",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 34
+ },
+ {
+  "ibge": "2709202",
+  "nome": "Traipu",
+  "uf": "AL",
+  "lat": -9.9676,
+  "lng": -37.0015,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 47
+ },
+ {
+  "ibge": "2709301",
+  "nome": "União dos Palmares",
+  "uf": "AL",
+  "lat": -9.1577,
+  "lng": -36.0342,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 60
+ },
+ {
+  "ibge": "2709400",
+  "nome": "Viçosa",
+  "uf": "AL",
+  "lat": -9.3728,
+  "lng": -36.2433,
+  "contrato": "ativo",
+  "turnos": [
+   "manhã",
+   "tarde"
+  ],
+  "volumetria": 73
+ }
 ]
