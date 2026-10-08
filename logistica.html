@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Logístico — Avaliações por Escola | Mapa Escolar</title>
+  <meta name="description" content="Painel logístico: dia das avaliações, escola e técnico responsável em cards, com agendamento e filtros." />
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body data-page="logistica">
+  <div id="log-bgmap" aria-hidden="true"></div>
+  <div class="bgshade" aria-hidden="true"></div>
+  <div id="log-app"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('reduced');
+    }
+  </script>
+  <script type="module" src="/src/logistica.jsx"></script>
+</body>
+</html>

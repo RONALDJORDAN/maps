@@ -18,17 +18,14 @@
   <!-- Top search bar estilo Google Maps -->
   <!-- Pílula de menu superior-direita: home / pesquisa expansível / filtros (só ícones) -->
   <nav class="pill-menu glass" aria-label="Menu do mapa">
-    <button id="btn-home" class="pill-btn active" title="Minha localização" aria-label="Minha localização" data-tip="Minha localização">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
-    </button>
-    <button id="btn-search" class="pill-btn" title="Pesquisar escola" aria-label="Pesquisar" data-tip="Pesquisar">
+    <button id="btn-search" class="pill-btn" aria-label="Pesquisar escola" data-tip="Pesquisar">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
     </button>
     <input id="pill-search" class="pill-input" type="search" placeholder="Nome da escola cadastrada…" autocomplete="off" aria-label="Buscar escola" />
-    <button id="search-clear" class="pill-btn" title="Limpar" aria-label="Limpar" data-tip="Limpar">
+    <button id="search-clear" class="pill-btn" aria-label="Limpar busca" data-tip="Limpar">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
     </button>
-    <button id="btn-filter" class="pill-btn" title="Filtros" aria-label="Filtros" data-tip="Filtros">
+    <button id="btn-filter" class="pill-btn" aria-label="Filtros" data-tip="Filtros">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
     </button>
     <span class="inline-filters" aria-label="Filtro por município">
@@ -44,7 +41,7 @@
         </span>
       </span>
     </span>
-    <button id="btn-layers" class="pill-btn" title="Modo de visão" aria-label="Modo de visão" data-tip="Modo de visão">
+    <button id="btn-layers" class="pill-btn" aria-label="Modo de visão" data-tip="Modo de visão">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 12.5l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
     </button>
     <span class="inline-layers" aria-label="Modo de visão">
@@ -53,12 +50,24 @@
       <button class="filter-chip mode" data-mode="esri">Esri</button>
       <button class="filter-chip mode" data-mode="osm">Ruas</button>
     </span>
-    <a href="/escolas.html" class="pill-btn" title="Registro de escolas" aria-label="Registro de escolas" data-tip="Registro de escolas" style="text-decoration:none">
+    <a href="/escolas.html" class="pill-btn" aria-label="Registro de escolas" data-tip="Registro de escolas" style="text-decoration:none">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-4h6v4"/><path d="M9 11h.01M15 11h.01M12 11h.01"/></svg>
     </a>
+    <a href="/logistica.html" class="pill-btn" aria-label="Painel logístico" data-tip="Painel logístico" style="text-decoration:none">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+    </a>
+    <span class="apps-combo">
+      <button id="btn-apps" class="pill-btn" aria-label="Mostrar opções" aria-haspopup="true" aria-expanded="false" data-tip="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="5" r="1.8"/><circle cx="12" cy="5" r="1.8"/><circle cx="19" cy="5" r="1.8"/><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/><circle cx="5" cy="19" r="1.8"/><circle cx="12" cy="19" r="1.8"/><circle cx="19" cy="19" r="1.8"/></svg>
+      </button>
+    </span>
   </nav>
 
   <div id="pill-count" class="pill-count glass hidden" aria-live="polite"></div>
+
+  <button id="btn-home" class="pill-btn loc-fab" aria-label="Minha localização" data-tip="Minha localização">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+  </button>
 
   <div class="gmaps-layout fullmap">
     <main class="map-area">

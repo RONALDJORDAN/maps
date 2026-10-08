@@ -254,15 +254,7 @@ async function init() {
     }
   }
 
-  // Game-loop 60fps delta cap (Skill 5.9) — só para contadores / sem layout thrash
-  let last = performance.now()
-  function loop(t) {
-    const dt = Math.min((t - last) / 1000, 0.05); last = t
-    void dt
-    requestAnimationFrame(loop)
-  }
-  if (!document.documentElement.classList.contains('reduced')) requestAnimationFrame(loop)
-
+  // Sem game-loop ocioso: Leaflet/animês usam rAF próprio; nada aqui p/ não gastar bateria
   const search = $('#pill-search')
   let deb
   let geoMarkers = []
@@ -328,6 +320,11 @@ async function init() {
     document.querySelector('.pill-menu')?.classList.remove('expanded-layers')
     $('#btn-layers')?.classList.remove('active')
   }
+  function closeApps() {
+    document.querySelector('.pill-menu')?.classList.remove('show-all')
+    $('#btn-apps')?.classList.remove('active')
+    $('#btn-apps')?.setAttribute('aria-expanded', 'false')
+  }
   $('#btn-search')?.addEventListener('click', () => {
     const menu = document.querySelector('.pill-menu')
     const willExpand = !menu?.classList.contains('expanded')
@@ -361,6 +358,17 @@ async function init() {
     setMode(b.dataset.mode)
   }))
   $('#btn-search')?.addEventListener('click', (ev) => ev.stopPropagation())
+  // Ícone padrão fixo: btn-apps revela todas as outras opções da pílula
+  $('#btn-apps')?.addEventListener('click', (ev) => {
+    ev.stopPropagation()
+    const menu = document.querySelector('.pill-menu')
+    const willOpen = !menu?.classList.contains('show-all')
+    if (!willOpen) { closeSearch(); closeFilters(); closeLayers() }
+    menu?.classList.toggle('show-all', willOpen)
+    $('#btn-apps')?.classList.toggle('active', willOpen)
+    $('#btn-apps')?.setAttribute('aria-expanded', String(willOpen))
+  })
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') closeApps() })
   let myLocMarker = null
   $('#btn-home')?.addEventListener('click', () => {
     if (search) search.value = ''; query = ''; clearGeo()

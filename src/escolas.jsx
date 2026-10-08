@@ -31,6 +31,7 @@ function App() {
   const [msg, setMsg] = useState('')
   const [showForm, setShowForm] = useState(false)
   const [loaded, setLoaded] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     // fundo: mesmo mapa satélite da página inicial (só visual)
@@ -46,9 +47,13 @@ function App() {
     loadStore().then((s) => { setRows(s); setLoaded(true) }).catch(() => { setRows([]); setLoaded(true) })
   }, [])
   useEffect(() => {
-    const onDoc = (ev) => { if (!ev.target.closest?.('.mun-combo')) setDropOpen(false) }
+    const onDoc = (ev) => {
+      if (!ev.target.closest?.('.mun-combo')) setDropOpen(false)
+    }
+    const onKey = (ev) => { if (ev.key === 'Escape') setMenuOpen(false) }
     document.addEventListener('click', onDoc)
-    return () => document.removeEventListener('click', onDoc)
+    document.addEventListener('keydown', onKey)
+    return () => { document.removeEventListener('click', onDoc); document.removeEventListener('keydown', onKey) }
   }, [])
 
   const munList = useMemo(() => {
@@ -109,9 +114,12 @@ function App() {
 
   return (
     <div className="tmap">
-      <nav className="pill-menu glass" aria-label="Registro de escolas">
-        <a href="/index.html" className="pill-btn" title="Voltar ao mapa" aria-label="Voltar ao mapa" data-tip="Mapa" style={{ textDecoration: 'none' }}>
+      <nav className={'pill-menu glass' + (menuOpen ? ' show-all' : '')} aria-label="Registro de escolas">
+        <a href="/index.html" className="pill-btn" aria-label="Voltar ao mapa" data-tip="Mapa" style={{ textDecoration: 'none' }}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V21h5v-6h4v6h5V9.5" /></svg>
+        </a>
+        <a href="/logistica.html" className="pill-btn" aria-label="Painel logístico" data-tip="Logística" style={{ textDecoration: 'none' }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M13 6l6 6-6 6" /></svg>
         </a>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b9aecb" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" /></svg>
         <input value={q} onChange={(e) => setQ(e.target.value)} className="pill-input static" type="search" placeholder="Buscar escola…" aria-label="Buscar escola" />
@@ -131,6 +139,11 @@ function App() {
               {!munList.length && <span className="mun-empty">Nada encontrado</span>}
             </span>
           </span>
+        </span>
+        <span className="apps-combo" onClick={(e) => e.stopPropagation()}>
+          <button className={'pill-btn' + (menuOpen ? ' active' : '')} onClick={() => setMenuOpen((o) => !o)} aria-haspopup="true" aria-expanded={menuOpen} aria-label="Mostrar opções" data-tip="Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="5" r="1.8" /><circle cx="12" cy="5" r="1.8" /><circle cx="19" cy="5" r="1.8" /><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /><circle cx="5" cy="19" r="1.8" /><circle cx="12" cy="19" r="1.8" /><circle cx="19" cy="19" r="1.8" /></svg>
+          </button>
         </span>
       </nav>
 

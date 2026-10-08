@@ -1,0 +1,82 @@
+[
+  {
+    "id": "LOG-001",
+    "inep": "27006166",
+    "ibge": "2706406",
+    "data": "2026-10-09",
+    "periodo": "manhã",
+    "tecnico": "Carlos Silva",
+    "status": "agendado",
+    "observacao": "Avaliação de leitura — 1º ao 5º ano"
+  },
+  {
+    "id": "LOG-002",
+    "inep": "27006573",
+    "ibge": "2706406",
+    "data": "2026-10-09",
+    "periodo": "tarde",
+    "tecnico": "Mariana Souza",
+    "status": "agendado",
+    "observacao": "Matemática — turmas da tarde"
+  },
+  {
+    "id": "LOG-003",
+    "inep": "27006328",
+    "ibge": "2706406",
+    "data": "2026-10-10",
+    "periodo": "manhã",
+    "tecnico": "Carlos Silva",
+    "status": "em_rota",
+    "observacao": "Levar kits de prova impressos"
+  },
+  {
+    "id": "LOG-004",
+    "inep": "27043021",
+    "ibge": "2704302",
+    "data": "2026-10-13",
+    "periodo": "manhã",
+    "tecnico": "João Pereira",
+    "status": "agendado",
+    "observacao": ""
+  },
+  {
+    "id": "LOG-005",
+    "inep": "27003001",
+    "ibge": "2700300",
+    "data": "2026-10-14",
+    "periodo": "tarde",
+    "tecnico": "Ana Lima",
+    "status": "agendado",
+    "observacao": "Escola com 2 turnos — confirmar com direção"
+  },
+  {
+    "id": "LOG-006",
+    "inep": "27006131",
+    "ibge": "2706406",
+    "data": "2026-10-08",
+    "periodo": "manhã",
+    "tecnico": "Mariana Souza",
+    "status": "concluido",
+    "observacao": "Povoado Santiago — estrada rural, saiu 7h"
+  },
+  {
+    "id": "LOG-007",
+    "inep": "27006336",
+    "ibge": "2706406",
+    "data": "2026-10-15",
+    "periodo": "manhã",
+    "tecnico": "João Pereira",
+    "status": "remarcar",
+    "observacao": "Ilha do Ferro — acesso por balsa, remarcar se chover"
+  },
+  {
+    "id": "LOG-008",
+    "inep": "27047081",
+    "ibge": "2704708",
+    "data": "2026-10-16",
+    "periodo": "tarde",
+    "tecnico": "Ana Lima",
+    "status": "agendado",
+    "observacao": ""
+  }
+]

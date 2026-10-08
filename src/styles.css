@@ -13,7 +13,7 @@
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);overflow:hidden}
-body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard"],body[data-page="404"],body[data-page="402"]{overflow:auto}
+body[data-page="municipios"],body[data-page="escolas"],body[data-page="logistica"],body[data-page="dashboard"],body[data-page="404"],body[data-page="402"]{overflow:auto}
 .glass{background:var(--glass);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid var(--line)}
 /* Topbar Google Maps */
 .gmaps-topbar{position:fixed;top:12px;left:12px;right:12px;z-index:1000;display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.5)}
@@ -34,8 +34,16 @@ body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard
 .pill-btn{position:relative;border:0;background:transparent;color:#fff;width:44px;height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background var(--transition-slow) var(--ease),transform var(--transition-slow) var(--ease)}
 .pill-btn:hover{background:rgba(139,92,246,.25);transform:scale(1.06)}
 .pill-btn.active{background:rgba(139,92,246,.38)}
-/* dica flutuante sob o botão */
+/* dica flutuante sob o botão (só onde há hover de verdade; no touch ela grudava na tela) */
 .pill-btn[data-tip]:hover::after{content:attr(data-tip);position:absolute;top:calc(100% + 10px);right:0;background:#000;border:1px solid var(--line);color:#fff;font-size:12px;padding:6px 10px;border-radius:10px;white-space:nowrap;pointer-events:none;z-index:1001}
+@media (hover:none){
+  .pill-btn[data-tip]:hover::after{display:none}
+  .loc-fab[data-tip]:hover::after{display:none}
+}
+/* perf mobile: blur menor = GPU respira (visual quase igual) */
+@media (max-width:760px){
+  .glass,.tcard{backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%)}
+}
 /* pesquisa expande horizontalmente dentro da pílula (conteúdo 60Hz: só opacity/transform) */
 .pill-input{width:0;opacity:0;transform:translateX(10px);border:0;outline:0;background:transparent;color:#fff;font-size:15px;padding:0;transition:opacity .28s var(--ease),transform .32s var(--ease)}
 .pill-input::placeholder{color:var(--muted)}
@@ -59,6 +67,21 @@ body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard
 .inline-filters>*:nth-child(4),.inline-layers>*:nth-child(4){transition-delay:.12s}
 .inline-filters>*:nth-child(5),.inline-layers>*:nth-child(5){transition-delay:.16s}
 .inline-filters .filter-chip{font-size:12px;padding:6px 10px;flex:none}
+/* web: cada opção abre na própria linha — botões ficam parados, só o painel cresce no X */
+@media (min-width:561px){
+  .pill-menu{justify-content:flex-end}
+  .pill-menu.show-all{flex-wrap:wrap}
+  .pill-menu #pill-search,.pill-menu .inline-filters,.pill-menu .inline-layers{order:10;flex-basis:100%}
+  .pill-menu .inline-filters,.pill-menu .inline-layers{justify-content:flex-end}
+  .pill-menu #pill-search{margin-left:auto}
+  .pill-menu.expanded .pill-input{max-height:80px;transition:width 1s cubic-bezier(.16,1,.3,1),max-height 1s cubic-bezier(.16,1,.3,1),opacity .8s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+  .pill-menu.expanded-filters .inline-filters,.pill-menu.expanded-layers .inline-layers{max-height:80px;transition:max-width 1s cubic-bezier(.16,1,.3,1),max-height 1s cubic-bezier(.16,1,.3,1),opacity .8s cubic-bezier(.16,1,.3,1)}
+  .pill-menu.expanded-filters .inline-filters>*,.pill-menu.expanded-layers .inline-layers>*{transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+  .pill-menu.expanded-filters .inline-filters>:nth-child(2),.pill-menu.expanded-layers .inline-layers>:nth-child(2){transition-delay:.1s}
+  .pill-menu.expanded-filters .inline-filters>:nth-child(3),.pill-menu.expanded-layers .inline-layers>:nth-child(3){transition-delay:.2s}
+  .pill-menu.expanded-filters .inline-filters>:nth-child(4),.pill-menu.expanded-layers .inline-layers>:nth-child(4){transition-delay:.3s}
+  .pill-menu.expanded-filters .inline-filters>:nth-child(5),.pill-menu.expanded-layers .inline-layers>:nth-child(5){transition-delay:.4s}
+}
 .f-sep{width:1px;align-self:stretch;background:var(--line);flex:none}
 .mun-select{background:#000;border:1px solid var(--line);color:#fff;border-radius:12px;font-size:13px;padding:7px 10px;outline:0;max-width:min(200px,40vw);cursor:pointer}
 .mun-select option{background:#171021;color:#fff}
@@ -68,7 +91,7 @@ body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard
 .mun-btn:hover{border-color:rgba(139,92,246,.6);background:rgba(139,92,246,.18)}
 .mun-btn:hover{border-color:rgba(139,92,246,.6)}
 .mun-btn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.mun-drop{position:absolute;top:calc(100% + 8px);right:0;width:min(260px,72vw);border-radius:14px;padding:8px;display:flex;flex-direction:column;gap:6px;box-shadow:0 12px 36px rgba(0,0,0,.6);opacity:0;transform:translateY(-8px) scale(.98);transform-origin:top right;transition:opacity .25s var(--ease),transform .3s var(--ease)}
+.mun-drop{position:absolute;top:calc(100% + 8px);right:0;width:min(260px,72vw);border-radius:14px;padding:8px;display:flex;flex-direction:column;gap:6px;box-shadow:0 12px 36px rgba(0,0,0,.6);opacity:0;transform:translateY(-8px) scale(.98);transform-origin:top right;transition:opacity .45s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
 .mun-drop:not(.hidden){opacity:1;transform:none}
 .mun-drop input{background:#000;border:1px solid var(--line);color:#fff;border-radius:10px;font-size:13px;padding:8px 10px;outline:0}
 .mun-drop input::placeholder{color:var(--muted)}
@@ -82,8 +105,60 @@ body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard
 .mun-list::-webkit-scrollbar-track{background:transparent}
 .pill-panel{position:fixed;top:74px;right:14px;z-index:1000;border-radius:16px;padding:10px 12px;box-shadow:0 8px 30px rgba(0,0,0,.5);display:flex;flex-direction:column;gap:8px;max-width:min(340px,calc(100vw - 28px))}
 .panel-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+/* menu de aplicações: combo + dropdown com setinha pra cima */
+.apps-combo{position:relative;flex:none}
+.apps-drop{position:absolute;top:calc(100% + 12px);right:6px;width:248px;border-radius:16px;padding:10px;display:flex;flex-direction:column;gap:8px;box-shadow:0 12px 36px rgba(0,0,0,.6);opacity:0;transform:translateY(-8px) scale(.98);transform-origin:top right;transition:opacity .25s var(--ease),transform .3s var(--ease);z-index:1001}
+.apps-drop:not(.hidden){opacity:1;transform:none}
+/* setinha pra cima apontando para o botão do menu superior */
+.apps-drop::before{content:"";position:absolute;top:-7px;right:18px;width:12px;height:12px;background:var(--glass);border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg);backdrop-filter:blur(20px) saturate(180%)}
+.apps-title{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:2px 4px}
+.apps-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.app-item{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:#fff;font-size:12px;padding:12px 8px;border-radius:12px;border:1px solid transparent;transition:background var(--transition-slow) var(--ease),border-color var(--transition-slow) var(--ease),transform var(--transition-slow) var(--ease)}
+.app-item:hover{background:rgba(139,92,246,.18);border-color:rgba(139,92,246,.4);transform:translateY(-1px)}
+.app-item.active{background:rgba(139,92,246,.25);border-color:rgba(139,92,246,.55)}
+.app-item svg{opacity:.95}
+.app-item span{line-height:1.2;text-align:center}
+/* ícone padrão fixo: só o grade aparece; clique abre lateralmente devagar e fluido */
+.pill-menu{flex-wrap:nowrap}
+.pill-menu .apps-combo{flex:none}
+.pill-menu .keep-open{flex:none}
+.pill-menu>*{flex:none;transition:opacity .3s var(--ease),transform .35s var(--ease),max-width .35s var(--ease),max-height .35s var(--ease),margin .3s var(--ease),padding .3s var(--ease)}
+.pill-menu:not(.show-all)>:not(.apps-combo):not(.keep-open){max-width:0;min-width:0;max-height:0;opacity:0;margin:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;border:0;overflow:hidden;pointer-events:none;transform:translateX(24px)}
+.pill-menu:not(.show-all){padding:6px;border-radius:999px;gap:0}
+/* painel fechado colapsa a altura (desktop e mobile, sem deixar vão fantasma) */
+.pill-menu:not(.expanded) #pill-search{max-height:0;overflow:hidden}
+.pill-menu:not(.expanded-filters) .inline-filters{max-height:0}
+.pill-menu:not(.expanded-layers) .inline-layers{max-height:0}
+/* painel aberto: altura explícita p/ animar liso (mobile usa a base rápida, web usa 1s) */
+.pill-menu.expanded #pill-search{max-height:80px}
+.pill-menu.expanded-filters .inline-filters{max-height:80px}
+.pill-menu.expanded-layers .inline-layers{max-height:80px}
+/* abertura lateral lenta (expo-out ~1s) com cascata da esquerda para a direita */
+.pill-menu.show-all>:not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){max-width:360px;max-height:120px;opacity:1;transform:none;transition:max-width 1.1s cubic-bezier(.16,1,.3,1),max-height 1.1s cubic-bezier(.16,1,.3,1),opacity .8s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)}
+.pill-menu.show-all>:nth-child(1):not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){transition-delay:.05s}
+.pill-menu.show-all>:nth-child(2):not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){transition-delay:.14s}
+.pill-menu.show-all>:nth-child(3):not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){transition-delay:.23s}
+.pill-menu.show-all>:nth-child(4):not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){transition-delay:.32s}
+.pill-menu.show-all>:nth-child(5):not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){transition-delay:.41s}
+.pill-menu.show-all>:nth-child(6):not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){transition-delay:.5s}
+.pill-menu.show-all>:nth-child(7):not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){transition-delay:.59s}
+.pill-menu.show-all>:nth-child(8):not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){transition-delay:.68s}
+.pill-menu.show-all>:nth-child(9):not(.apps-combo):not(.keep-open):not(.inline-filters):not(.inline-layers){transition-delay:.77s}
 .pill-count{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:900;font-size:13px;padding:8px 16px;border-radius:999px;background:rgba(0,0,0,.72);border:1px solid rgba(236,72,153,.4);color:#fff;box-shadow:0 4px 16px rgba(0,0,0,.5);pointer-events:none;white-space:nowrap}
-@media (max-width:560px){ .pill-btn{width:40px;height:40px} .pill-menu.expanded .pill-input{width:min(160px,44vw)} }
+/* minha localização: só no mapa, fixa no canto inferior esquerdo */
+.loc-fab{position:fixed;left:14px;bottom:24px;z-index:950;width:48px;height:48px;background:rgba(23,16,33,.78);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);border:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.5)}
+.loc-fab:hover{background:rgba(139,92,246,.35)}
+.loc-fab[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:calc(100% + 10px);bottom:50%;transform:translateY(50%);background:#000;border:1px solid var(--line);color:#fff;font-size:12px;padding:6px 10px;border-radius:10px;white-space:nowrap;pointer-events:none;z-index:1001}
+@media (max-width:560px){
+  .pill-btn{width:40px;height:40px}
+  .pill-menu.expanded .pill-input{width:min(200px,60vw)}
+  /* mobile: menu vertical — ícone no topo, opções empilham para baixo */
+  .pill-menu{flex-direction:column;align-items:flex-end}
+  .pill-menu .apps-combo{order:-1}
+  .pill-menu.show-all{flex-wrap:nowrap;justify-content:flex-start;border-radius:24px;row-gap:6px}
+  /* mobile: 16px nos campos evita zoom automático do iOS ao focar */
+  .pill-menu.show-all .pill-input,.mun-drop input,.form input,.form select,.search-wrap input,.err-search input{font-size:16px}
+}
 #pill-searchbox{flex-direction:row;align-items:center;gap:8px}
 #pill-searchbox input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:#fff;font-size:15px}
 #pill-searchbox input::placeholder{color:var(--muted)}
@@ -158,7 +233,7 @@ body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard
 .page h1{color:#fff}
 .page p{color:var(--muted)}
 /* módulo registro: grade, botões e formulário */
-.school-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.school-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;content-visibility:auto;contain-intrinsic-size:auto 600px}
 .school-card .row-actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
 .mini-btn{border:1px solid var(--line);background:var(--surface);color:#fff;font-size:12px;padding:6px 10px;border-radius:10px;cursor:pointer;text-decoration:none}
 .mini-btn.danger{border-color:rgba(248,113,113,.5);color:#fca5a5}
@@ -171,7 +246,7 @@ body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard
 #esc-bgmap .leaflet-tile-pane{filter:brightness(.55) saturate(.9)}
 .bgshade{position:fixed;inset:0;z-index:0;background:linear-gradient(180deg,rgba(12,7,20,.55),rgba(12,7,20,.15) 30%,rgba(12,7,20,.72));pointer-events:none}
 #esc-app{position:relative;z-index:1}
-.tmap{min-height:100vh}
+.tmap{min-height:100vh;min-height:100dvh}
 .tmap .pill-menu{max-width:calc(100vw - 28px)}
 .pill-input.static{width:min(200px,38vw);opacity:1;transform:none}
 .tcontent{padding:86px 16px 40px;max-width:1100px;margin:0 auto}
@@ -190,7 +265,8 @@ body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard
   .tmap .mun-btn{max-width:130px;font-size:12px}
   .reg-form .grid2{grid-template-columns:1fr}
 }
-.table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+#mun-app{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table{width:100%;min-width:520px;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .table th,.table td{padding:10px;border-bottom:1px solid var(--line);font-size:14px;text-align:left;color:#fff}
 .table th{color:var(--muted);font-weight:600}
 .form{display:grid;gap:10px;background:var(--surface);border:1px solid var(--line);padding:16px;border-radius:12px;margin-top:12px}
@@ -199,4 +275,41 @@ body[data-page="municipios"],body[data-page="escolas"],body[data-page="dashboard
 .err-search input{background:#000;border:1px solid var(--line);color:#fff}
 .plan-mini div{background:var(--surface-2)!important;color:#fff}
 @media (max-width:760px){ .top-links{display:none} #sidebar{width:300px} }
+/* Painel logístico: KPIs, filtros, cards com dia + escola + técnico */
+#log-bgmap{position:fixed;inset:0;z-index:0}
+#log-bgmap .leaflet-tile-pane{filter:brightness(.55) saturate(.9)}
+#log-app{position:relative;z-index:1}
+.log-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.log-kpi{text-align:center;cursor:default}
+.log-kpi b{display:block;font-size:26px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.log-kpi.ok b{background:linear-gradient(135deg,#34d399,#10b981);-webkit-background-clip:text;background-clip:text;color:transparent}
+.log-kpi span{font-size:11px;color:var(--muted)}
+.log-filters{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+.log-hint{font-size:12px;color:var(--muted);margin-left:auto}
+.log-grid{align-items:stretch}
+.log-card{cursor:default;display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--accent)}
+.log-card.st-agendado{border-left-color:#8b5cf6}
+.log-card.st-em_rota{border-left-color:#fbbf24}
+.log-card.st-concluido{border-left-color:#34d399;opacity:.92}
+.log-card.st-remarcar{border-left-color:#f87171}
+.log-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(139,92,246,.35)}
+.log-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.log-date b{display:block;font-size:20px;color:#fff;line-height:1}
+.log-date.today b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.log-date span{font-size:11px;color:var(--muted);text-transform:capitalize}
+.log-status{font-size:11px;padding:3px 10px;border-radius:999px;white-space:nowrap;border:1px solid var(--line)}
+.log-status.agendado{background:rgba(139,92,246,.22);color:#c4b5fd}
+.log-status.em_rota{background:rgba(251,191,36,.18);color:#fcd34d}
+.log-status.concluido{background:rgba(52,211,153,.18);color:#6ee7b7}
+.log-status.remarcar{background:rgba(248,113,113,.18);color:#fca5a5}
+.log-card h4{margin:2px 0;font-size:15px}
+.log-tech{display:flex;gap:10px;align-items:center;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:7px 10px}
+.tech-avatar{width:32px;height:32px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;font-style:normal;flex:none}
+.log-tech b{display:block;font-size:13px;color:#fff}
+.log-tech span{font-size:11px;color:var(--muted)}
+.log-obs{font-size:12px;color:#e6def5!important;background:rgba(139,92,246,.12);border-radius:8px;padding:6px 8px}
+.mini-btn.ok{border-color:rgba(52,211,153,.5);color:#6ee7b7}
+.log-card .row-actions{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap}
+#log-form textarea{resize:vertical}
+@media (max-width:760px){ .log-kpis{grid-template-columns:repeat(2,1fr)} }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important} .card{opacity:1;transform:none} }

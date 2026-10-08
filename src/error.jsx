@@ -7,14 +7,18 @@ if (!reduced && window.anime) {
   window.anime({ targets: '.apple-stagger-item', translateY: [20, 0], opacity: [0, 1], duration: 700, easing: 'cubicBezier(.22,1,.36,1)' })
   // parallax sutil do card com o mouse (só transform)
   const card = document.querySelector('.err-card')
-  let tx = 0, ty = 0, cx = 0, cy = 0
+  let tx = 0, ty = 0, cx = 0, cy = 0, dirty = true
   window.addEventListener('mousemove', (e) => {
     tx = (e.clientX / window.innerWidth - 0.5) * 10
     ty = (e.clientY / window.innerHeight - 0.5) * 10
+    dirty = true
   }, { passive: true })
   ;(function loop() {
-    cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08
-    if (card) card.style.transform = `translate(${cx.toFixed(2)}px,${cy.toFixed(2)}px)`
+    if (dirty) {
+      cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08
+      if (Math.abs(tx - cx) < 0.01 && Math.abs(ty - cy) < 0.01) dirty = false
+      else if (card) card.style.transform = `translate(${cx.toFixed(2)}px,${cy.toFixed(2)}px)`
+    }
     requestAnimationFrame(loop)
   })()
 }
